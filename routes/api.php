@@ -20,17 +20,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //get all locations
-Route::get('locations',[LocationController::class, 'getLocation']);
+Route::get('locations',[LocationController::class, 'getLocationApi']);
 
 //get Specefic location detail
-Route::get('location/{id}',[LocationController::class, 'getLocationById']);
+Route::get('location/{id}',[LocationController::class, 'getLocationByIdApi']);
 
 //add location
-Route::post('addLocation',[LocationController::class, 'addLocation']);
+Route::post('addLocation',[LocationController::class, 'addLocationApi']);
 
 //update location
-Route::put('updateLocation/{id}',[LocationController::class, 'updateLocation']);
+Route::put('updateLocation/{id}',[LocationController::class, 'updateLocationApi']);
 
 //delete location
-Route::delete('deleteLocation/{id}',[LocationController::class, 'deleteLocation']);
+Route::delete('deleteLocation/{id}',[LocationController::class, 'deleteLocationApi']);
 

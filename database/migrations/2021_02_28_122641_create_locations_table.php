@@ -19,8 +19,8 @@ class CreateLocationsTable extends Migration
             $table->string('pathImage');
             $table->string('description');
             $table->string('anecdote');
-            $table->float('longitude', 8, 7);
-            $table->float('latitude', 8, 7);
+            $table->float('longitude', 9, 7);
+            $table->float('latitude', 9, 7);
             $table->timestamps();
         });
     }
