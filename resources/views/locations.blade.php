@@ -89,7 +89,7 @@
                     <td>{{$location->name}}</td>
                     <td>{{$location->description}}</td>
                     <td>{{$location->anecdote}}</td>
-                    <td>{{$location->pathImage}}</td>
+                    <td><img src="{{asset('images')}}/{{$location->pathImage}}" style="max-width: 100px;" alt="img not found"></td>
                     <td>{{$location->longitude}}</td>
                     <td>{{$location->latitude}}</td>
                     <td> 

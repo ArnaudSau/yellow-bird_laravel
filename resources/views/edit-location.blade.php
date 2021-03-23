@@ -53,7 +53,7 @@
         @if(Session::has('location_updated'))
             <script>alert('Le lieu a bien été mis à jours')</script>
         @endif
-        <form method="POST" action="{{route('location.update')}}">
+        <form method="POST" action="{{route('location.update')}}" enctype="multipart/form-data">
             @csrf
             <a href="/locations">retour</a>
             <h2>Editer un lieu</h2>
@@ -80,7 +80,8 @@
             </div>
             <div class="champ">
                 <label for="pathImage">Sélectionner une Image</label>
-                <input required accept="image/*" type="file" name="pathImage">
+                <input accept="image/*" type="file" name="pathImage"> <br>
+                <td><img src="{{asset('images')}}/{{$location->pathImage}}" style="max-width: 200px;" alt="img not found"></td>
             </div>
             <button type="submit">Modifier ce lieu</button>
         </form>
