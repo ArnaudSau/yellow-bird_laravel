@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Location;
+use Illuminate\Cache\RateLimiting\Unlimited;
 
 class LocationController extends Controller
 {
@@ -45,6 +46,8 @@ class LocationController extends Controller
 
     public function deleteLocation($id)
     {
+        $location = Location::find($id);
+        unlink(public_path('images')."/".$location->pathImage);
         Location::where("id", $id)->delete();
         return back()->with('location_deleted', 'Location has been deleted sucessfully !');
     }
