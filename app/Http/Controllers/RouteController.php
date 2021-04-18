@@ -104,4 +104,19 @@ class RouteController extends Controller
         return back()->with('location_route_updated', 'locationroute has been updated sucessfully !');
     }
 
+    /*---------- API -------------- */
+    public function getRouteApi()
+    {
+        return response()->json(Route::all(), 200);
+    }
+
+    public function getRouteByIdApi($id)
+    {
+        $route = Route::find($id);
+        if (is_null($route)) {
+            return response()->json(['message' => 'route not found'], 404);
+        }
+        return response()->json($route::find($id), 200);
+    }
+
 }

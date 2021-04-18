@@ -98,7 +98,7 @@ class LocationController extends Controller
         return response()->json($location::find($id), 200);
     }
 
-    public function addLocationApi(Request $request)
+   /*  public function addLocationApi(Request $request)
     {
         $location = Location::create($request->all());
         return response($location, 201);
@@ -122,5 +122,5 @@ class LocationController extends Controller
         }
         $location->delete();
         return response()->json(null, 204);
-    }
+    } */
 }

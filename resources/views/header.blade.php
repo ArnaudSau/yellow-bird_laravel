@@ -48,6 +48,7 @@
     <div>
         <h1 class="title">YellowBird</h1>
     </div>
+    <h2>Bonjour {{Auth::user()->name}}</h2>
     <nav class="nav">
         <ul class="liste">
             <li><a class="navLink" href="/locations">Locations</a></li>
