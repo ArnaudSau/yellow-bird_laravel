@@ -15,10 +15,12 @@ class CreateRouteLocationsTable extends Migration
     {
         Schema::create('route_locations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('location_id');
-            $table->unsignedInteger('route_id');
+            $table->bigInteger('location_id')->unsigned();
+            $table->bigInteger('route_id')->unsigned();
             $table->integer('orderInRoute');
             $table->timestamps();
+            $table->foreign('route_id')->references('id')->on('routes')->onDelete('cascade');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
         });
     }
 

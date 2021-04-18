@@ -11,9 +11,14 @@ class Location extends Model
     public $timestamp = false;
     protected $guarded = [];
 
-    public function route_locations()
+    public function routes()
+    {
+        return $this->belongsToMany(Route::class,'route_locations');
+    }
+
+    /* public function route_locations()
     {
         return $this->hasMany(Route_location::class);
-    }
+    } */
 /*     protected $fillable = ['name','description','pathImage','anecdote','longitude', 'latitude'];
  */}

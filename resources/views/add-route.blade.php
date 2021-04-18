@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Location</title>
+    <title>Add route</title>
     <style>
 
         .container {
@@ -43,39 +43,27 @@
 @include('header')
 
     <div class="container">
-        @if(Session::has('location_created'))
-            <script>alert('Le lieu a bien été créé')</script>
+        @if(Session::has('route_created'))
+            <script>alert('Le circuit a bien été créé')</script>
         @endif
-        <form method="POST" action="{{route('location.create')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('route.create')}}" enctype="multipart/form-data">
             @csrf
-            <a href="/locations">retour</a>
-            <h2>Ajouter un lieu</h2>
+            <a href="/routes">retour</a>
+            <h2>Ajouter un circuit</h2>
             <div class="champ">
-                <label for="name">Nom du lieu</label>
+                <label for="name">Nom du circuit</label>
                 <input required type="text" name="name" placeholder="nom">
             </div>
             <div class="champ">
-                <label for="description">Description du lieu</label>
+                <label for="description">Description du circuit</label>
                 <textarea required name="description" id="" cols="30" rows="10"></textarea>
-            </div>
-            <div class="champ">
-                <label for="anecdote">Anecdote du lieu</label>
-                <textarea required name="anecdote" id="" cols="30" rows="3"></textarea>
-            </div>
-            <div class="champ">
-                <label for="longitude">Longitude</label>
-                <input required type="number" step="any" name="longitude" placeholder="34.123457">
-            </div>
-            <div class="champ">
-                <label for="latitude">Latitude</label>
-                <input required type="number" step="any" name="latitude" placeholder="2.014584">
             </div>
             <div class="champ">
                 <label for="pathImage">Sélectionner une Image</label>
                 <input required accept="image/*" type="file" name="pathImage" id="pathImage"> <br>
-                <img id="previewImg" alt="img location" style="max-width: 150px; margin-top:20px;display:none;">
+                <img id="previewImg" alt="img route" style="max-width: 150px; margin-top:20px;display:none;">
             </div>
-            <button type="submit">Ajouter ce lieu</button>
+            <button type="submit">Ajouter ce circuit</button>
         </form>
     </div>
 

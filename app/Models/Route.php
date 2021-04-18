@@ -10,9 +10,14 @@ class Route extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function route_locations()
+    public function locations()
+    {
+        return $this->belongsToMany(Location::class,'route_locations');
+    }
+
+    /* public function route_locations()
     {
         return $this->hasMany(Route_location::class);
-    }
+    } */
 
 }

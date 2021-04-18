@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Locations</title>
+    <title>All Routes</title>
     <style>
 
         .container {
@@ -18,7 +18,7 @@
             margin: auto;
         }
 
-        .add {
+        .add{
             text-decoration: none;
             background-color: #A7CB23;
             padding: 10px;
@@ -32,8 +32,7 @@
             width: 100%;
             background-color: white;
         }
-
-        h2 {
+        h2{
             text-align: center;
         }
 
@@ -52,21 +51,20 @@
         tr:nth-child(even) {
             background-color: #f2f2f2
         }
+
     </style>
 </head>
 
 <body>
-    @include('header')
+@include('header')
 
     <div class="container">
         <div class="header">
-            <h2>Tous les lieux</h2>
-            <a class="add" href="/add-location">Ajouter un lieu</a>
+            <h2>Tous les Circuits</h2>
+            <a class="add" href="/add-route">Ajouter un circuit</a>
         </div>
-        @if(Session::has('location_deleted'))
-        <script>
-            alert("le lieu a bien été supprimé")
-        </script>
+        @if(Session::has('route_deleted'))
+            <script>alert("le lieu a bien été supprimé")</script>
         @endif
         <table>
             <thead>
@@ -74,27 +72,22 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Anecdote</th>
                     <th>PathImage</th>
-                    <th>Longitude</th>
-                    <th>Latitude</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($locations as $location)
+                @foreach($routes as $route)
                 <tr>
-                    <td>{{$location->id}}</td>
-                    <td>{{$location->name}}</td>
-                    <td>{{$location->description}}</td>
-                    <td>{{$location->anecdote}}</td>
-                    <td><img src="{{asset('images')}}/{{$location->pathImage}}" style="max-width: 100px;" alt="img not found"></td>
-                    <td>{{$location->longitude}}</td>
-                    <td>{{$location->latitude}}</td>
-                    <td>
-                        <a href="/location/<?php echo $location->id; ?>">Details</a>
-                        <a href="/edit-location/<?php echo $location->id; ?>">Edit</a>
-                        <a href="/delete-location/<?php echo $location->id; ?>">Delete</a>
+                    <td>{{$route->id}}</td>
+                    <td>{{$route->name}}</td>
+                    <td>{{$route->description}}</td>
+                    <td><img src="{{asset('imagesRoute')}}/{{$route->pathImage}}" style="max-width: 100px;" alt="img not found"></td>
+                    <td> 
+                        <a href="/route/<?php echo $route->id; ?>">Details</a> 
+                        <a href="/edit-route/<?php echo $route->id; ?>">Edit</a>
+                        <a href="/location-route/<?php echo $route->id; ?>">Edit locations</a>
+                        <a href="/delete-route/<?php echo $route->id; ?>">Delete</a>
                     </td>
                 </tr>
                 @endforeach

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Location details</title>
+    <title>Route details</title>
     <style>
 
         .container{
@@ -30,15 +30,12 @@
 
     <div class="container">
         <div class="infos">
-            <a href="/locations">retour</a>
+            <a href="/routes">retour</a>
             <h2>Détails sur le lieu</h2>
             <div class="details">
-                <p>Nom :  <br><?php echo $location->name; ?></p>
-                <p>Description :<br> <?php echo $location->description; ?></p>
-                <p>Anecdote :<br> <?php echo $location->anecdote; ?></p>
-                <p>PathImage :<br> <?php echo $location->pathImage; ?></p>
-                <p>Longitude :<br> <?php echo $location->longitude; ?></p>
-                <p>Latitude :<br> <?php echo $location->latitude; ?></p>
+                <p>Nom :  <br><?php echo $route->name; ?></p>
+                <p>Description :<br> <?php echo $route->description; ?></p>
+                <p>PathImage :<br> <?php echo $route->pathImage; ?></p>
             </div>
         </div>
     </div>
